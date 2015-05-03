@@ -1,6 +1,6 @@
 # Pinteresting
 
-[Pinteresting](https://hello-pinteresting.herokuapp.com/) is a very basic (but functioning!) simulation of Pinterest. 
+[Pinteresting](https://hello-pinteresting.herokuapp.com/) is a very basic (but soon-to-be functioning!) simulation of Pinterest. 
 
 Written in Ruby 2.2.1, Rails 4.2.0
 
