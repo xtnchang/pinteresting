@@ -1,4 +1,5 @@
 <%= link_to 'Back', pins_path %>
+
 <div class="row">	
   <div class="col-md-offset-2 col-md-8">
     <div class="panel panel-default">
@@ -10,11 +11,10 @@
 		<p><strong><%= @pin.user.name if @pin.user %></strong></p>
 
 		<% if @pin.user == current_user %>
-		<%= link_to edit_pin_path(@pin) do %>
 			<%= link_to edit_pin_path(@pin) do %>
-        <span class="glyphicon glyphicon-edit"></span>
-        Edit
-      <% end %>
+  <span class="glyphicon glyphicon-edit"></span>
+  Edit
+  <% end %>
 		<% end %>
 		</div>
 	</div>

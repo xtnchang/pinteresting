@@ -1,7 +1,7 @@
 class PinsController < ApplicationController
-  before_action :set_pin, only: [:show, :edit, :update, :destroy]
-  before_action :corect_user!, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_pin, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   
   # GET /pins
   # GET /pins.json
@@ -38,7 +38,6 @@ class PinsController < ApplicationController
   # PATCH/PUT /pins/1
   # PATCH/PUT /pins/1.json
   def update
-    respond_to do |format|
       if @pin.update(pin_params)
         redirect_to @pin, notice: 'Pin was successfully updated.'
       else
@@ -46,16 +45,12 @@ class PinsController < ApplicationController
         format.json { render json: @pin.errors, status: :unprocessable_entity }
       end
     end
-  end
 
   # DELETE /pins/1
   # DELETE /pins/1.json
   def destroy
     @pin.destroy
-    respond_to do |format|
-      format.html { redirect_to pins_url, notice: 'Pin was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to pins_url
   end
 
   private
