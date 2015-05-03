@@ -31,7 +31,7 @@ class PinsController < ApplicationController
         redirect_to @pin, notice: 'Pin was successfully created.'
       else
         render :new
-        format.json { render json: @pin.errors, status: :unprocessable_entity }
+        # format.json { render json: @pin.errors, status: :unprocessable_entity }
     end
   end
 
@@ -42,7 +42,7 @@ class PinsController < ApplicationController
         redirect_to @pin, notice: 'Pin was successfully updated.'
       else
         format.html { render :edit }
-        format.json { render json: @pin.errors, status: :unprocessable_entity }
+        # format.json { render json: @pin.errors, status: :unprocessable_entity }
       end
     end
 
